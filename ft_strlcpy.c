@@ -6,11 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:53:28 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/31 15:11:06 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:17:53 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+int	ft_strlen(const char *str)
 {
 	int	count;
 
@@ -20,14 +22,14 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-int	ft_strlcpy(char *dest, char *src, int size)
+int	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (size == 0)
 	{
-		dest[i] = 0;
+		dest = 0;
 		return (ft_strlen(src));
 	}
 	while (i < size - 1 && src[i])

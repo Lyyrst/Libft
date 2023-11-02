@@ -6,11 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:00:27 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/31 14:42:41 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:31:33 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	count;
 
@@ -20,7 +20,7 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-char	*ft_strrchr(char *str, char c)
+char	*ft_strrchr(const char *str, int c)
 {
 	int	i;
 
@@ -28,8 +28,10 @@ char	*ft_strrchr(char *str, char c)
 	while (i > 0)
 	{
 		if (str[i] == c)
-			return (&str[i]);
+			return ((char *)&str[i]);
 		i--;
 	}
+	if (str[i] == c)
+		return ((char *)&str[i]);
 	return (0);
 }

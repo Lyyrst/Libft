@@ -6,13 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:47:17 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/31 16:37:15 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:57:05 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	count;
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		i;
 	char	*dest;
@@ -33,14 +33,4 @@ char	*ft_strdup(char *src)
 		dest[i] = src[i];
 	dest[i] = 0;
 	return (dest);
-}
-
-#include <stdio.h>
-#include <bsd/string.h>
-
-int	main(int argc, char** argv)
-{
-	(void) argc;
-	printf("mylib :%s\n", ft_strdup(argv[1]));
-	printf("lib c :%s", strdup(argv[1]));
 }

@@ -6,14 +6,16 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:41:13 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/31 17:02:47 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:44:18 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, void *src, int n)
+#include <stddef.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char *s;
-	char *d;
+	char	*s;
+	char	*d;
 
 	s = (char *)src;
 	d = (char *)dest;

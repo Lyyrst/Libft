@@ -6,12 +6,14 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:37:28 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/30 16:03:41 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:20:16 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *str, int n)
+#include <stddef.h>
+
+void	ft_bzero(void *str, size_t n)
 {
 	while (n > 0)
-		str[n-- - 1] = 0;
+		((char *)str)[n-- - 1] = 0;
 }

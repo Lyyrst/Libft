@@ -6,11 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:26:35 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/30 16:23:51 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:20:31 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

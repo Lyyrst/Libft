@@ -6,11 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:47:05 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/30 16:19:51 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:20:19 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	ret;

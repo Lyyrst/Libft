@@ -6,11 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:28:15 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/30 16:32:13 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:21:13 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	count;
 

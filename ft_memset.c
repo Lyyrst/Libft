@@ -6,11 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:32:10 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/31 16:49:56 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:41:12 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *str, char c, int n)
+#include <stddef.h>
+
+void	*ft_memset(void *str, int c, size_t n)
 {
 	while (n > 0)
 	{
@@ -18,14 +20,4 @@ void	*ft_memset(void *str, char c, int n)
 		n--;
 	}
 	return (str);
-}
-
-#include <stdio.h>
-#include <bsd/string.h>
-
-int	main(int argc, char** argv)
-{
-	(void) argc;
-	printf("mylib :%s\n", (char *)ft_memset(argv[1], argv[2][0], 0));
-	printf("lib c :%s", (char *)memset(argv[1], argv[2][0], 0));
 }

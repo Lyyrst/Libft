@@ -6,19 +6,20 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:32:59 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/30 16:12:20 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:20:24 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stddef.h>
 
 void	ft_bzero(void *str, int n)
 {
 	while (n > 0)
-		str[n-- - 1] = 0;
+		((char *)str)[n-- - 1] = 0;
 }
 
-void	*calloc(int n, int size)
+void	*ft_calloc(size_t n, size_t size)
 {
 	void	*array;
 

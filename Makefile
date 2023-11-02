@@ -6,7 +6,7 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2023/10/31 16:17:37 by kbutor-b         ###   ########.fr        #
+#    Updated: 2023/11/02 14:37:19 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFILES = ft_atoi.c \
 			ft_memset.c \
 			ft_strchr.c \
 			ft_strdup.c \
-			test/ft_strlcat.c \
+			ft_strlcat.c \
 			ft_strlcpy.c \
 			ft_strlen.c \
 			ft_strncmp.c \
@@ -45,7 +45,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME) clean
+
 $(NAME) : $(OFILES)
+	ar rcs $(NAME) $(OFILES)
 
 clean :
 	rm -f $(OFILES)
@@ -53,8 +55,7 @@ clean :
 fclean : clean
 	rm -f $(NAME)
 
-re:
-	fclean $(NAME)
+re: fclean $(NAME)
 
 .PHONY :
 	all clean fclean re

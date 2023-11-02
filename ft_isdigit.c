@@ -6,11 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:16:31 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/30 16:39:41 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:20:30 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
