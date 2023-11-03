@@ -6,13 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:00:32 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/02 17:48:41 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:50:36 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	int	count;
 

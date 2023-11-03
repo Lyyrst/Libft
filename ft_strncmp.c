@@ -6,11 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:04:11 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/10/31 15:08:52 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:47:07 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, int n)
+#include <stddef.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 
@@ -18,7 +20,7 @@ int	ft_strncmp(char *s1, char *s2, int n)
 	while (n > 0 && (s1[++i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		n--;
 	}
 	return (0);

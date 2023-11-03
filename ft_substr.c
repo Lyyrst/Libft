@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 12:19:18 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/03 18:50:04 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/03 15:40:38 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/03 16:52:14 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_isalpha(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	return (0);
-}
+#include <stdlib.h>
 
-static int	ft_isdigit(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+	char		*str;
+	size_t		i;
 
-int	ft_isalnum(int c)
-{
-	if (ft_isalpha(c) == 1 || ft_isdigit(c) == 1)
-		return (1);
-	return (0);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	i = 0;
+	while (i < len && s[start])
+		str[i++] = s[start++];
+	str[i] = 0;
+	return (str);
 }
