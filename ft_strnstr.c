@@ -6,27 +6,19 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:18:41 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/03 18:50:56 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/09 00:48:52 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-static int	ft_strlen(const char *str)
-{
-	int	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *tofind, size_t n)
 {
-	int	i;
-	int	i2;
+	size_t	i;
+	size_t	n2;
+	int		i2;
 
+	n2 = n;
 	i = -1;
 	if (tofind[0] == 0)
 		return ((char *)&str[0]);
@@ -35,12 +27,12 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t n)
 		if (str[i] == tofind[0])
 		{
 			i2 = 0;
-			while (tofind[i2++] && n - i2 > 0)
+			while (tofind[i2++])
 			{
+				if (ft_strlen(tofind) == i2 && i + i2 <= n2)
+					return ((char *)&str[i]);
 				if (tofind[i2] != str[i2 + i] && i2 < ft_strlen(tofind))
 					break ;
-				if (ft_strlen(tofind) == i2)
-					return ((char *)&str[i]);
 			}
 		}
 	}

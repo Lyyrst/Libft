@@ -6,10 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:51:33 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/03 21:09:21 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/08 22:38:34 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 static int	ft_len(const char *str, int i, char sep)
@@ -32,7 +33,9 @@ static int	ft_arraylen(char const *str, char sep)
 
 	i = 0;
 	count = 0;
-	if (str[0] == sep)
+	if (str[i] == '\0')
+		return (0);
+	if (str[0] != sep)
 	{
 		count++;
 		i++;
@@ -61,10 +64,9 @@ static void	*ft_makesplit(char **array, char const *str, char sep)
 	int	j;
 	int	k;
 
-	i = -1;
+	i = 0;
 	j = 0;
-	k = 0;
-	while (str[++i])
+	while (str[i])
 	{
 		if (str[i] != sep)
 		{
@@ -79,8 +81,9 @@ static void	*ft_makesplit(char **array, char const *str, char sep)
 				array[j][k++] = str[i++];
 			array[j++][k] = 0;
 		}
+		else
+			i++;
 	}
-	array[j] = 0;
 	return (array);
 }
 
@@ -88,25 +91,30 @@ char	**ft_split(char const *s, char c)
 {
 	char	**array;
 
+	if (!s)
+		return (0);
 	array = malloc(sizeof(char *) * (ft_arraylen(s, c) + 1));
 	if (!array)
 		return (0);
 	if (!ft_makesplit(array, s, c))
 		return (0);
+	array[ft_arraylen(s, c)] = 0;
 	return (array);
 }
-/*
-#include <stdio.h>
+
+/*#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
 	(void) argc;
+	printf("arraylen : %d\n", ft_arraylen(argv[1], ' '));
+	printf("wordlen  : %d\n", ft_len(argv[1], 0, ' '));
 	char **array;
-	array = ft_split(argv[1], argv[2][0]);
+	array = ft_split(argv[1], ' ');
 	int	i = 0;
 	while (array[i])
 	{
-		printf("%s\n", array[i]);
+		printf("'%s'\n", array[i]);
 		i++;
 	}
 	return (0);

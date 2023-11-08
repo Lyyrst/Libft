@@ -6,11 +6,12 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:05:17 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/03 18:47:31 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:07:06 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static int	ft_inset(char c, char const *set)
 {
@@ -23,16 +24,6 @@ static int	ft_inset(char c, char const *set)
 			return (1);
 	}
 	return (0);
-}
-
-static int	ft_strlen(const char *str)
-{
-	int	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)

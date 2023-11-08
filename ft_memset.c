@@ -6,11 +6,11 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:32:10 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/02 14:41:12 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/08 21:17:19 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)
 {

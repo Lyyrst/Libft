@@ -6,21 +6,12 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:47:17 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/03 18:50:18 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:00:42 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-static int	ft_strlen(const char *str)
-{
-	int	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {

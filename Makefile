@@ -6,17 +6,19 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2023/11/02 14:37:19 by kbutor-b         ###   ########.fr        #
+#    Updated: 2023/11/08 21:27:05 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
+HEADERS = libft.h
+
 CFILES = ft_atoi.c \
 			ft_bzero.c \
 			ft_calloc.c \
 			ft_isalnum.c \
-			ft_isalplha.c \
+			ft_isalpha.c \
 			ft_isascii.c \
 			ft_isdigit.c \
 			ft_isprint.c \
@@ -34,11 +36,13 @@ CFILES = ft_atoi.c \
 			ft_strnstr.c \
 			ft_strrchr.c \
 			ft_tolower.c \
-			ft_toupper.c
+			ft_toupper.c \
+			ft_split.c \
+			
 
-OFILES = $(SRCS:.c=.o)
+OFILES = $(CFILES:.c=.o)
 
-%.o: %.c
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 CC = gcc
@@ -50,10 +54,10 @@ $(NAME) : $(OFILES)
 	ar rcs $(NAME) $(OFILES)
 
 clean :
-	rm -f $(OFILES)
+	rm -rf $(OFILES)
 
 fclean : clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean $(NAME)
 
