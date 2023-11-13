@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:51:33 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/08 22:38:34 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:45:58 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,21 +101,3 @@ char	**ft_split(char const *s, char c)
 	array[ft_arraylen(s, c)] = 0;
 	return (array);
 }
-
-/*#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	(void) argc;
-	printf("arraylen : %d\n", ft_arraylen(argv[1], ' '));
-	printf("wordlen  : %d\n", ft_len(argv[1], 0, ' '));
-	char **array;
-	array = ft_split(argv[1], ' ');
-	int	i = 0;
-	while (array[i])
-	{
-		printf("'%s'\n", array[i]);
-		i++;
-	}
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:01:30 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/09 00:22:14 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:37:53 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <stdio.h>
 #include <bsd/string.h>
 
-int	main()
+int	main(void)
 {
-	//(void)argc;
-	printf("%s", ft_strnstr("aaabcabcd", "abcd", -1));
+	ft_putnbr_fd(2147483647, 2);
 }

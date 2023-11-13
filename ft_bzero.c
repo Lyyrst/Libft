@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:37:28 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/02 14:20:16 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:09:32 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_bzero(void *str, size_t n)
 {
 	while (n > 0)
-		((char *)str)[n-- - 1] = 0;
+		((unsigned char *)str)[n-- - 1] = 0;
 }

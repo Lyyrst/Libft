@@ -6,18 +6,35 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:40:38 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/03 16:52:14 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:21:25 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
+
+int	get_len(char const *s, unsigned int start, size_t len)
+{
+	size_t	count;
+
+	count = 0;
+	while (s[start++] && count < len)
+		count++;
+	return (count);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*str;
 	size_t		i;
+	size_t		lstr;
 
-	str = malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (0);
+	if ((size_t)ft_strlen(s) < start)
+		len = 0;
+	lstr = get_len(s, start, len);
+	str = malloc(sizeof(char) * (lstr + 1));
 	if (!str)
 		return (0);
 	i = 0;

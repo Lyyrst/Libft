@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:18:41 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/09 00:48:52 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:40:12 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t n)
 
 	n2 = n;
 	i = -1;
+	if ((!str && !n))
+		return (0);
 	if (tofind[0] == 0)
 		return ((char *)&str[0]);
 	while (str[++i] && n-- > 0)

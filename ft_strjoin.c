@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:50:41 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/08 18:06:01 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:41:05 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len;
 	char	*str;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc(sizeof(char) * (len + 1));
 	if (!s1 || !s2)
 		return (0);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
 	*str = 0;

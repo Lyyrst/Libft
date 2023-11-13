@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 16:05:17 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/08 18:07:06 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/13 18:41:43 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	end = ft_strlen(s1);
 	if (!s1 || !set)
 		return (0);
+	end = ft_strlen(s1);
 	while (s1[start] && ft_inset(s1[start], set) == 1)
 		start++;
 	while (end > start && ft_inset(s1[end - 1], set) == 1)
@@ -51,11 +51,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
-/*
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	printf("%s", ft_strtrim(argv[1], argv[2]));
-}*/
