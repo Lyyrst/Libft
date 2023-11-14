@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 15:01:30 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/14 18:12:31 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 13:10:51 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 13:18:27 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <bsd/string.h>
+#include <stdlib.h>
 
-int	main(void)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	printf("%s", (char *)ft_calloc(0, 0));
+	if (!lst || !(*del))
+		return ;
+	(*del)(lst->content);
+	free(lst);
 }

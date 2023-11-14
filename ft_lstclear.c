@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 15:01:30 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/14 18:12:31 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 13:20:20 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 14:04:13 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <bsd/string.h>
+#include <stdlib.h>
 
-int	main(void)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	printf("%s", (char *)ft_calloc(0, 0));
+	if (!lst || !(*del))
+		return ;
+	t_list	*temp;
+
+	while (*lst)
+	{
+		(*del)((*lst)->content);
+		temp = *lst;
+		*lst = temp->next;
+		free(temp);
+	}
+	*lst = 0;
 }

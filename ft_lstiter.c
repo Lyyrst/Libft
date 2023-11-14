@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 15:01:30 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/14 18:12:31 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 14:08:50 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 14:10:20 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
-#include <bsd/string.h>
 
-int	main(void)
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	printf("%s", (char *)ft_calloc(0, 0));
+	if (!lst || !(*f))
+		return ;
+	while (lst)
+	{
+		(*f)(lst->content);
+		lst = lst->next;
+	}
 }

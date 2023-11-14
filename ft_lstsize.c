@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 15:01:30 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/14 18:12:31 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 12:41:54 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 12:44:13 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <bsd/string.h>
 
-int	main(void)
+int	ft_lstsize(t_list *lst)
 {
-	printf("%s", (char *)ft_calloc(0, 0));
+	size_t	count;
+
+	count = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		count++;
+	}
+	return (count);
 }

@@ -6,7 +6,7 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2023/11/13 19:10:41 by kbutor-b         ###   ########.fr        #
+#    Updated: 2023/11/14 19:07:24 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,9 +47,20 @@ CFILES = ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c \
+			ft_toupper.c 
+
+BFILES = 	ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
 			
 OFILES = $(CFILES:.c=.o)
+BOFILES = $(BFILES:.c=.o)
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -69,6 +80,9 @@ fclean : clean
 	rm -rf $(NAME)
 
 re: fclean $(NAME)
+
+bonus : $(BOFILES)
+	ar rcs $(NAME) $^
 
 .PHONY :
 	all clean fclean re

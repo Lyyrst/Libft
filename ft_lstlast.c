@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 15:01:30 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/14 18:12:31 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 12:45:13 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 12:52:23 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <bsd/string.h>
 
-int	main(void)
+t_list *ft_lstlast(t_list *lst)
 {
-	printf("%s", (char *)ft_calloc(0, 0));
+	if (lst == 0)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
