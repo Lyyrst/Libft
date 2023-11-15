@@ -6,11 +6,10 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:00:32 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/13 19:16:44 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:56:56 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 int	ft_strlcat(char *dest, const char *src, size_t size)

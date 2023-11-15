@@ -6,14 +6,14 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 15:40:38 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/13 19:21:25 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:31:57 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	get_len(char const *s, unsigned int start, size_t len)
+static size_t	get_len(char const *s, unsigned int start, size_t len)
 {
 	size_t	count;
 

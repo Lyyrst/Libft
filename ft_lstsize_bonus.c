@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 12:28:15 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/15 20:04:29 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 12:41:54 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 12:44:13 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	count;
 
 	count = 0;
-	while (str[count])
+	while (lst)
+	{
+		lst = lst->next;
 		count++;
+	}
 	return (count);
 }

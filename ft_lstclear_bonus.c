@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 12:28:15 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/15 20:04:29 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 13:20:20 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/15 20:08:43 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	count;
+	t_list	*temp;
 
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
+	if (!lst || !(*del))
+		return ;
+	while (*lst)
+	{
+		(*del)((*lst)->content);
+		temp = *lst;
+		*lst = temp->next;
+		free(temp);
+	}
+	*lst = 0;
 }

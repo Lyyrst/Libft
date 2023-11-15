@@ -6,13 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:29:37 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/08 19:36:28 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:30:47 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_getlen(int n)
+static int	ft_getlen(int n)
 {
 	int	count;
 
@@ -32,7 +32,7 @@ int	ft_getlen(int n)
 	return (count);
 }
 
-char	*min_int(long long int n)
+static char	*min_int(long long int n)
 {
 	char	*str;
 	int		i;
