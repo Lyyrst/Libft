@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:47:05 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/02 14:20:19 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:51:08 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 		return (0);
 	while ((str[i] >= 9 && str[i] <= 13)
 		|| str[i] == 32)
-			i++;
+		i++;
 	if (str[i] == '-')
 		par = 1;
 	if (str[i] == '-' || str[i] == '+')

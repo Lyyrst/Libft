@@ -6,20 +6,32 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:08:23 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/15 20:38:29 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:05:25 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct gnl_list
+{
+	char			*content;
+	struct gnl_list	*next;
+}	t_gnl;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *str, size_t n);
@@ -64,5 +76,21 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_printf(const char *str, ...);
+int		check_str(const char *str, va_list params, int n);
+void	print_str(char c, va_list params, int *n);
+void	ft_putstr(char *str, int *n);
+void	ft_putchar(char c, int *n);
+void	ft_putnbr_base(long long int n, char *base, int *nb);
+void	ft_putupper_base(long long int n, char *base, int *nb);
+void	check_unsigned(unsigned int n, int *nb);
+void	print_p(unsigned long int n, int *nb);
+char	*get_next_line(int fd);
+int		line_len(t_gnl *list);
+int		new_line(t_gnl *list);
+void	lstclear(t_gnl **list);
+void	ft_freesplit(char **array, int i);
+int		is_sign(int c);
+t_gnl	*lstlast(t_gnl *list);
 
 #endif

@@ -6,13 +6,13 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2023/11/15 20:43:36 by kbutor-b         ###   ########.fr        #
+#    Updated: 2024/01/08 12:04:50 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-HEADERS = libft.h
+HEADERS = libft.h get_next_line.h
 
 CFILES = ft_atoi.c \
 			ft_bzero.c \
@@ -47,20 +47,25 @@ CFILES = ft_atoi.c \
 			ft_strtrim.c \
 			ft_substr.c \
 			ft_tolower.c \
-			ft_toupper.c 
-
-BFILES = 	ft_lstnew_bonus.c \
-			ft_lstadd_front_bonus.c \
-			ft_lstsize_bonus.c \
-			ft_lstlast_bonus.c \
-			ft_lstadd_back_bonus.c \
-			ft_lstdelone_bonus.c \
-			ft_lstclear_bonus.c \
-			ft_lstiter_bonus.c \
-			ft_lstmap_bonus.c
+			ft_toupper.c \
+			ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
+			ft_printf.c \
+			put.c \
+			print_p.c \
+			print_str.c \
+			get_next_line.c \
+			get_next_line_utils.c \
+			is_sign.c
 			
 OFILES = $(CFILES:.c=.o)
-BOFILES = $(BFILES:.c=.o)
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -74,15 +79,12 @@ $(NAME) : $(OFILES)
 	ar rcs $(NAME) $(OFILES)
 
 clean :
-	rm -rf $(OFILES) $(BOFILES)
+	rm -rf $(OFILES)
 
 fclean : clean
 	rm -rf $(NAME)
 
 re: fclean $(NAME)
-
-bonus : $(BOFILES)
-	ar rcs $(NAME) $^
 
 .PHONY :
 	all clean fclean re

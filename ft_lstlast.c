@@ -6,13 +6,13 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:45:13 by kbutor-b          #+#    #+#             */
-/*   Updated: 2023/11/14 12:52:23 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:07:45 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == 0)
 		return (0);
