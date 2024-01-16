@@ -6,7 +6,7 @@
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:08:23 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/16 12:05:25 by kbutor-b         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:41:58 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,7 @@ void	lstclear(t_gnl **list);
 void	ft_freesplit(char **array, int i);
 int		is_sign(int c);
 t_gnl	*lstlast(t_gnl *list);
+int		ft_arraylen(char **arr);
+char	**merge_array(char **arr1, char **arr2, char *str1, char *str2);
 
 #endif
