@@ -24,7 +24,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo/Redfox_coding.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">LIBFT</h3>
@@ -77,12 +77,9 @@ This is a C library so you need to have gcc compiler.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
+   git clone https://github.com/Lyyrst/Libft.git
 2. Makefile !
    ```sh
    make && make clean
