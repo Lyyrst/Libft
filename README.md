@@ -99,7 +99,7 @@ gcc [all_c_files] libft.a -o [program_name]
 <!-- CONTACT -->
 ## Contact
 
-[Discord : lyrst](https://discord.com/users/lyrst)
+[Discord : lyrst](https://discord.com/users/257192704537001984)
 
 kurt.butorp@gmail.com
 
