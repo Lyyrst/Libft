@@ -70,7 +70,6 @@ Later on that cursus, we can add to our Libft other project like ft_printf or ge
 ### Prerequisites
 
 This is a C library so you need to have gcc compiler.
-* npm
   ```sh
   sudo apt-get install gcc -y
   ```
