@@ -6,13 +6,13 @@
 #    By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/31 14:18:26 by kbutor-b          #+#    #+#              #
-#    Updated: 2024/01/16 12:42:12 by kbutor-b         ###   ########.fr        #
+#    Updated: 2024/02/13 14:45:28 by kbutor-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-HEADERS = src/libft.h
+HEADERS = src/libft.h src/get_next_line.h
 
 CFILES = src/ft_atoi.c \
 			src/ft_bzero.c \
@@ -64,8 +64,7 @@ CFILES = src/ft_atoi.c \
 			src/get_next_line.c \
 			src/get_next_line_utils.c \
 			src/is_sign.c \
-			src/ft_arraylen.c \
-			src/merge_array.c
+			src/ft_atol.c
 			
 OFILES = $(CFILES:.c=.o)
 

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arraylen.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kbutor-b <kbutor-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 12:19:54 by kbutor-b          #+#    #+#             */
-/*   Updated: 2024/01/16 12:23:51 by kbutor-b         ###   ########.fr       */
+/*   Created: 2023/11/14 12:52:36 by kbutor-b          #+#    #+#             */
+/*   Updated: 2023/11/14 13:15:11 by kbutor-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_arraylen(char **arr)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	count;
+	t_list	*p;
 
-	count = 0;
-	while (arr[count])
-		count++;
-	return (count);
+	p = *lst;
+	if (!lst || !new)
+		return ;
+	if (*lst == 0)
+	{
+		*lst = new;
+		return ;
+	}
+	while (p->next)
+		p = p->next;
+	p->next = new;
 }
